@@ -8,6 +8,10 @@
     "resolveJsonModule": true,
     "types": [
       "node"
-    ]
+    ],
+    "baseUrl": ".",
+    "paths": {
+        "@/*": ["./*"]
+    }
   }
 }
