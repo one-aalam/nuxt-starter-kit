@@ -262,6 +262,11 @@
   dependencies:
     mime "^2.5.2"
 
+"@fontsource/work-sans@^4.5.1":
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/@fontsource/work-sans/-/work-sans-4.5.1.tgz#b5fdff3f62ca8ac23e7c91e424ec64464ebd4023"
+  integrity sha512-3mvsBxQtxlAyu4uzwKgtI38rZ5V5ZBSz3CgIwQsD1N3DmrT7T1NRLFgO34GxZiUpWSjE04IHPp4Y2GKUWpmFsg==
+
 "@mapbox/node-pre-gyp@^1.0.5":
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/@mapbox/node-pre-gyp/-/node-pre-gyp-1.0.5.tgz#2a0b32fcb416fb3f2250fd24cb2a81421a4f5950"

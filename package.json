@@ -6,6 +6,7 @@
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
+    "@fontsource/work-sans": "^4.5.1",
     "autoprefixer": "^10.3.7",
     "nuxt3": "3.0.0-27248503.1e69bc5",
     "postcss": "^8.3.11",
