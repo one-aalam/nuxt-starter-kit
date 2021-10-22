@@ -1,6 +1,16 @@
+<script lang="ts" setup>
+import './assets/css/tailwind.css'
+</script>
+
 <template>
-  <div>
-    <!-- Remove this component to get started! -->
-    <NuxtWelcome />
-  </div>
+    <div class=" text-2xl">
+      <NuxtLink to="/">
+        Home
+      </NuxtLink>
+      <NuxtLink to="/about">
+        About
+      </NuxtLink>
+
+      <NuxtPage />
+    </div>
 </template>
