@@ -11,7 +11,16 @@ yarn install
 ```
 
 ## Known Issues
-- [ESLint](https://github.com/nuxt/eslint-config/issues/171)
+
+- [ESLint](https://github.com/nuxt/eslint-config/issues/171) - Once the issue is resolved you can add
+
+```json
+        "*.+(js|ts|vue)": [
+            "yarn run lint"
+        ],
+```
+
+in `package.json` under the `lint-staged` section for linting on commits
 
 ## Development
 

@@ -6,6 +6,7 @@
     "strict": false,
     "allowJs": true,
     "resolveJsonModule": true,
+    "skipLibCheck": true,
     "types": ["node", "unplugin-icons/types/solid"],
     "baseUrl": ".",
     "paths": {
