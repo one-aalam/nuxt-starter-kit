@@ -10,6 +10,9 @@ Make sure to install the dependencies
 yarn install
 ```
 
+## Known Issues
+- [ESLint](https://github.com/nuxt/eslint-config/issues/171)
+
 ## Development
 
 Start the development server on http://localhost:3000
