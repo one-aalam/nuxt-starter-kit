@@ -1,4 +1,5 @@
 import { defineNuxtConfig } from 'nuxt3'
+import Icons from 'unplugin-icons/vite'
 
 export default defineNuxtConfig({
     head: {
@@ -13,7 +14,9 @@ export default defineNuxtConfig({
         ],
     },
     buildModules: [
-
+        ['unplugin-icons/nuxt', {
+            defaultClass: 'w-7 h-7 inline-block'
+        }],
     ],
     srcDir: './',
     build: {

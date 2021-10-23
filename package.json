@@ -7,9 +7,11 @@
   },
   "devDependencies": {
     "@fontsource/work-sans": "^4.5.1",
+    "@iconify-json/heroicons-solid": "^1.0.1",
     "autoprefixer": "^10.3.7",
     "nuxt3": "3.0.0-27248503.1e69bc5",
     "postcss": "^8.3.11",
-    "tailwindcss": "^2.2.17"
+    "tailwindcss": "^2.2.17",
+    "unplugin-icons": "^0.12.16"
   }
 }

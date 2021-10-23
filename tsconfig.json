@@ -7,11 +7,12 @@
     "allowJs": true,
     "resolveJsonModule": true,
     "types": [
-      "node"
+      "node",
+      "unplugin-icons/types/solid"
     ],
     "baseUrl": ".",
     "paths": {
-        "@/*": ["./*"]
+        "~/*": ["./*"]
     }
   }
 }
