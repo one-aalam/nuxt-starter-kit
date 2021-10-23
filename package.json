@@ -7,7 +7,7 @@
     "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
     "lint": "yarn lint:js",
     "format": "prettier --write .",
-	"format-check": "prettier -- --list-different"
+    "format-check": "prettier -- --list-different"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.15.8",

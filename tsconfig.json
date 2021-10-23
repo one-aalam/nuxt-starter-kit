@@ -6,13 +6,10 @@
     "strict": false,
     "allowJs": true,
     "resolveJsonModule": true,
-    "types": [
-      "node",
-      "unplugin-icons/types/solid"
-    ],
+    "types": ["node", "unplugin-icons/types/solid"],
     "baseUrl": ".",
     "paths": {
-        "~/*": ["./*"]
+      "~/*": ["./*"]
     }
   }
 }
