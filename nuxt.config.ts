@@ -13,11 +13,17 @@ export default defineNuxtConfig({
             // { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
         ],
     },
+    alias: {
+        "~/*": "./*"
+    },
     buildModules: [
         ['unplugin-icons/nuxt', {
             defaultClass: 'w-7 h-7 inline-block'
         }],
     ],
+    publicRuntimeConfig: {
+        publicUrl: process.env.PUBLIC_URL
+    },
     srcDir: './',
     build: {
         postcss: {
