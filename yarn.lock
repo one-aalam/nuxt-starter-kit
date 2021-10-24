@@ -4800,9 +4800,9 @@ object.values@^1.1.5:
     es-abstract "^1.19.1"
 
 ohmyfetch@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/ohmyfetch/-/ohmyfetch-0.3.1.tgz#1e1f9dc638a48a74e9ddda13d63f1ea212d78128"
-  integrity sha512-Jyprp0/I2/ewH92iahCM7e3jKDzS6eYZ++h7xZDg8nE1mghPCK80skIQtIBSZEqiPMP+LdN8/onGS1r7CeKEqA==
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/ohmyfetch/-/ohmyfetch-0.3.2.tgz#841293cb11256779a78fc9a91a7f3f4ae3671970"
+  integrity sha512-AG+brJ3aPsFGLZV8V4TDCqRQNjNPIHg3KJxem8tYp4w1+4PEvLpib5zNaRNGnB+8Dqc4ftPLCzQYEsz30haX2A==
   dependencies:
     destr "^1.1.0"
     node-fetch "^2.6.1"
