@@ -1,16 +1,12 @@
 <script lang="ts" setup>
-    import '@fontsource/work-sans'
-    import './assets/css/tailwind.css'
+import '@fontsource/work-sans'
+import './assets/css/tailwind.css'
+import AlertList from '~/lib/alert/AlertList.vue'
 </script>
 
 <template>
-    <div class="antialiased">
-      <NuxtLink to="/">
-        Home
-      </NuxtLink>
-      <NuxtLink to="/about">
-        About
-      </NuxtLink>
-      <NuxtPage />
-    </div>
+  <div class="antialiased">
+    <AlertList />
+    <NuxtPage />
+  </div>
 </template>
