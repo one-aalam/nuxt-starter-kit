@@ -30,8 +30,8 @@ type ButtonProps = {
   wide?: boolean
   circle?: boolean
   outline?: boolean
-  loading: boolean
-  disabled: boolean
+  loading?: boolean
+  disabled?: boolean
 }
 
 const props = withDefaults(defineProps<ButtonProps>(), {
