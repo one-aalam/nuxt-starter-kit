@@ -1,4 +1,9 @@
-# Nuxt Starter Kit
+
+<div style="text-align:center;">
+<img src="./assets/nsk.png" height="80px" title="Nuxt Starter Kit" />
+</div>
+
+
 _Nuxt Starter Kit_ is an opinionated boilerplate based off of [Nuxt3](https://v3.nuxtjs.org/)(beta), with all the bells and whistles you would want ready, up and running when starting a Nuxt project to play and experiment with. Out of the box you get all the `essentials`
 - __Typescript__ as the language choice
 - __Tailwind CSS__ for quick styling without getting out of your HTML
@@ -9,7 +14,7 @@ _Nuxt Starter Kit_ is an opinionated boilerplate based off of [Nuxt3](https://v3
 - __ESLint__(added but it's currently failing due to [#171](https://github.com/nuxt/eslint-config/issues/171)) and
 - __Prettier__ for static code analysis and code formatting
 
-with [Supabase](https://supabase.io/) support landing soon!
+with [Supabase](https://supabase.io/) support
 
 and a bunch of pre-made, hand-rolled(easily replace-able) components, that you almost always end up installing/using for any non-trivial project
 - __Button__ Button with DaisyUI style support for all the basic use cases
