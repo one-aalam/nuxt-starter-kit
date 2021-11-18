@@ -12,16 +12,16 @@ _Nuxt Starter Kit_ is an opinionated boilerplate based off of [Nuxt3](https://v3
 <div align="center">
   <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&style=flat-square&color=5e17eb&labelColor=000000" alt="PRs welcome!" />
 
-  <img alt="License" src="https://img.shields.io/github/license/jpedroschmitz/typescript-nextjs-starter?style=flat-square&color=5e17eb&labelColor=000000">
+  <img alt="License" src="https://img.shields.io/github/license/one-aalam/nuxt-starter-kit?style=flat-square&color=5e17eb&labelColor=000000">
 
-  <a href="https://twitter.com/intent/follow?screen_name=jpedroschmitz">
-    <img src="https://img.shields.io/twitter/follow/aftabbuddy?style=flat-square&color=5e17eb&labelColor=000000" alt="Follow @jpedroschmitz" />
+  <a href="https://twitter.com/intent/follow?screen_name=aftabbuddy">
+    <img src="https://img.shields.io/twitter/follow/aftabbuddy?style=flat-square&color=5e17eb&labelColor=000000" alt="Follow @aftabbuddy" />
   </a>
 </div>
 <br/>
 <!--
 <div align="center">
-  <sub>Created by <a href="https://twitter.com/jpedroschmitz">Aftab Alam</a> with the help of many <a href="https://github.com/one-aalam/nuxt-starter-kit/graphs/contributors">wonderful contributors</a>.</sub>
+  <sub>Created by <a href="https://twitter.com/aftabbuddy">Aftab Alam</a> with the help of many <a href="https://github.com/one-aalam/nuxt-starter-kit/graphs/contributors">wonderful contributors</a>.</sub>
 </div>
 <br />
 -->
@@ -130,3 +130,6 @@ create policy "Anyone can upload an avatar."
         ],
 ```
 in `package.json` under the `lint-staged` section for linting on commits
+
+## License
+MIT
