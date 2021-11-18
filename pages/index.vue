@@ -1,8 +1,10 @@
 <template>
-    <div class="bg-gray-500 text-2xl text-red-500">
-        <Button>Lorem</Button>
-      Home
-    </div>
+  <div class="min-h-screen flex flex-col justify-center">
+      <StarterKit/>
+      <p class="text-center">Find Supabase integrated as a plugin, and full-stack authentication support alongwith components like alert/toast, button, separator, modal/dialog, spinner, etc. </p>
+      <Sep/>
+      <div class="text-center">
+        <NuxtLink class="btn btn-primary btn-outline" to="/gallery">Browse Components</NuxtLink>&nbsp;
+      </div>
+  </div>
 </template>
-<script lang="ts">
-</script>
