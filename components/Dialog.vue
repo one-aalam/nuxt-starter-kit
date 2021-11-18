@@ -10,7 +10,7 @@
                 <div class="h-1 bg-blue-200 mt-2 mb-4" />
                 <slot/>
                 <div class="modal-action">
-                    <button class="btn btn-primary" @click="$emit('confirm');setIsOpen(false)">{{actionLbl}}</button>
+                    <button class="btn btn-primary" @click="$emit('confirm');" :disabled="acting">{{actionLbl}}</button>
                     <button class="btn" @click="$emit('cancel');setIsOpen(false)">Cancel</button>
                 </div>
             </div>
@@ -32,6 +32,7 @@
         title: string
         desc?: string
         actionLbl?: string
+        acting?: boolean
         onAction?: () => void
     }
 
@@ -45,6 +46,7 @@
         desc: '',
         isOpen: false,
         actionLbl: 'Okay',
+        acting: false,
         onAction: () => {}
     })
 
@@ -52,7 +54,7 @@
 
     const isOpen = ref(props.isOpen)
 
-    function setIsOpen(value) {
+    function setIsOpen(value: boolean) {
         isOpen.value = value
     }
   </script>
