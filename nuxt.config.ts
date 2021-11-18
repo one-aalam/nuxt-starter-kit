@@ -1,5 +1,4 @@
 import { defineNuxtConfig } from 'nuxt3'
-import Icons from 'unplugin-icons/vite'
 
 export default defineNuxtConfig({
   head: {
@@ -26,6 +25,12 @@ export default defineNuxtConfig({
   ],
   publicRuntimeConfig: {
     publicUrl: process.env.PUBLIC_URL,
+    supabaseUrl: process.env.SUPABASE_URL,
+    supabaseKey: process.env.SUPABASE_KEY
+  },
+  privateRuntimeConfig: {
+    supabaseUrl: process.env.SUPABASE_URL,
+    supabaseKey: process.env.SUPABASE_KEY
   },
   srcDir: './',
   build: {
