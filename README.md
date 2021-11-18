@@ -14,8 +14,11 @@ with [Supabase](https://supabase.io/) support landing soon!
 and a bunch of pre-made, hand-rolled(easily replace-able) components, that you almost always end up installing/using for any non-trivial project
 - __Button__ Button with DaisyUI style support for all the basic use cases
 - __Alert/Toast__ to notify your users of the outcome of an event - `success, `error` or `default` is supported
-- __Modal__(WIP) as you always come back to `em
+- __Modal__(feat. Headless UI) as you always come back to `em
 - __Loaders__ for reporting the progress of an API call + a page load
+- __Avatar__ for user avatar's
+
+and more...
 
 ## Known Issues
 
