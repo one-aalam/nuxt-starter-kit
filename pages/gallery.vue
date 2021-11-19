@@ -33,9 +33,9 @@
       </ComponentExample>
       <Sep/>
       <ComponentExample heading="avatar">
-        <Avatar src="https://avatars.dicebear.com/api/adventurer/nuxt.svg" title="nuxt" loading="false"/>
-        <Avatar src="https://avatars.dicebear.com/api/adventurer/starter.svg" title="starter" loading="false"/>
-        <Avatar src="https://avatars.dicebear.com/api/adventurer/kit.svg" title="kit" loading="false"/>
+        <Avatar src="https://avatars.dicebear.com/api/adventurer/nuxt.svg" title="nuxt"/>
+        <Avatar src="https://avatars.dicebear.com/api/adventurer/starter.svg" title="starter"/>
+        <Avatar src="https://avatars.dicebear.com/api/adventurer/kit.svg" title="kit"/>
       </ComponentExample>
       <Sep/>
       <ComponentExample heading="alert/toast">
