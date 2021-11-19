@@ -5,6 +5,7 @@
       <Sep/>
       <div class="text-center">
         <NuxtLink class="btn btn-primary btn-outline" to="/gallery">Browse Components</NuxtLink>&nbsp;
+        <NuxtLink class="btn btn-primary" to="/auth">See Supabase in action &rarr;</NuxtLink>
       </div>
   </div>
 </template>
