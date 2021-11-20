@@ -5,7 +5,7 @@
                 <div v-else>
                     <div class="mt-2 text-center">
                         <Avatar :src="profile?.avatar_url" :title="profile?.username" :loading="avatarLoading" @change="updAvatar" />
-                        {{loading ? 'Updating..' : '(click to update)'}}
+                        {{avatarLoading ? 'Updating..' : '(click to update)'}}
                     </div>
                     <div class="profile-detail my-4 flex flex-col place-items-center">
                             <h2 class="text-4xl mb-1">Howdie, {{ profile?.username }}!</h2>
