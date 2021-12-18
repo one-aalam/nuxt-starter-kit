@@ -45,7 +45,6 @@
 </template>
 <script lang="ts" setup>
     import { handleAlert } from '~/lib/alert'
-
     // profile attrs
     type ProfileAttrs = {
         username?: string,
@@ -62,8 +61,8 @@
     const { $supabase } = useNuxtApp()
     // Supabase CRUD methods for profile
     const getUserProfile = (id: string) => $supabase.from('profiles').select(GET_COL_SET).eq('id', id).single()
-    const getCurrUserProfile = () => getUserProfile($supabase.auth.user()!.id)
-    const updCurrUserProfile = (attrs: ProfileAttrs) => $supabase.from('profiles').upsert({ ...attrs, id: $supabase.auth.user()!.id, updated_at: new Date()})
+    const getCurrentUserProfile = () => getUserProfile($supabase.auth.user()!.id)
+    const updateCurrentUserProfile = (attrs: ProfileAttrs) => $supabase.from('profiles').upsert({ ...attrs, id: $supabase.auth.user()!.id, updated_at: new Date()})
     // Supabase Storage methods for profile avatar
     const updCurrUserAvatar = async (file: File) => {
         const user = $supabase.auth.user()
@@ -81,7 +80,7 @@
         const { data, error: downloadError } = await $supabase.storage.from('avatars').download(url)
         if (downloadError) { throw downloadError }
 
-        return URL.createObjectURL(data)
+        return URL.createObjectURL(data as Blob)
     }
 
     const loading = ref<boolean>(true)
@@ -110,7 +109,7 @@
             }
             avatar_url = await getAvatar(avatar_url)
             profile.avatar_url = avatar_url
-        } catch (error) {
+        } catch (error: any) {
             handleAlert({ type: 'error', text: error.message })
         } finally {
             avatarLoading.value = false
@@ -120,7 +119,7 @@
     async function getProfile() {
         try {
             loading.value = true
-            let { data: { username, website, avatar_url } , error } = await getCurrUserProfile()
+            let { data: { username, website, avatar_url } , error } = await getCurrentUserProfile()
             if (error) {
                 handleAlert({ type: 'default', text: 'First login? You wanna update your profile details? 🙂' })
             }
@@ -132,7 +131,7 @@
 
             fields.username = username
             fields.website = website
-        } catch (error) {
+        } catch (error: any) {
             if(error instanceof TypeError) {
                 handleAlert({ type: 'default', text: 'First login? You wanna update your profile details? 🙂' })
             } else if(error.message === 'The resource was not found') {
@@ -148,13 +147,13 @@
     async function updProfile({ username, website }: Omit<ProfileAttrs, 'avatar_url'>) {
         try {
             isProfileUpdating.value = true
-            let { data: [ updates ], error: updateError } = await updCurrUserProfile({ username, website })
+            let { data: [ updates ], error: updateError } = await updateCurrentUserProfile({ username, website })
             if (updateError) {
                 throw updateError
             }
             profile.username = updates.username
             profile.website = updates.website
-        } catch (error) {
+        } catch (error: any) {
             handleAlert({ type: 'error', text: error.message })
         } finally {
             isModalOpened.value = false
