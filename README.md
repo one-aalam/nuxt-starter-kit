@@ -53,6 +53,7 @@ and more...
 __Note__: Refer the [basic](https://github.com/one-aalam/nuxt-starter-kit/tree/basic) branch for a bare minimum starter structure with all the `essentials`
 
 🚧 Nuxt 3 is currently in beta and is not yet production ready.
+🚧 Use `const { $supabase } = useNuxtApp()` to access Supabase client. Composables built around Supabase like `useSupabase`, although available are pretty much unusable due to initialization issues
 
 ## Quick Start
 

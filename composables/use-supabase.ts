@@ -6,7 +6,7 @@ export const useSupabase = () : SupabaseClient => {
     if(!supabase) {
         throw new Error('Cant find a Supabase provider')
     }
-    return supabase
+    return supabase as SupabaseClient
 }
 
 export const useAuth = (): SupabaseClient['auth'] => {
