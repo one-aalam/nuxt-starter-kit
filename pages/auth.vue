@@ -21,7 +21,7 @@
     const onSubmit = async (creds: { email: string, password: string }, isSignIn: boolean) => {
         try {
             loading.value = true
-            const { data, user, error } = isSignIn ? await $supabase.auth.signIn(creds) : await $supabase.auth.signUp(creds)
+            const { user, error } = isSignIn ? await $supabase.auth.signIn(creds) : await $supabase.auth.signUp(creds)
             loading.value = false
             if(error) {
                 return handleAlert({ type: 'error', text: error.message })

@@ -2,7 +2,7 @@ import { defineNuxtPlugin, NuxtApp } from '#app'
 import type { SupabaseClient } from '@supabase/supabase-js'
 import { createClient } from '@supabase/supabase-js'
 
-export default defineNuxtPlugin((nuxtApp: NuxtApp) => {
+export default defineNuxtPlugin((nuxtApp) => {
     const config = useRuntimeConfig()
     const supabase = createClient(config.supabaseUrl, config.supabaseKey)
 
@@ -11,7 +11,14 @@ export default defineNuxtPlugin((nuxtApp: NuxtApp) => {
 })
 
 declare module '#app' {
+    // @ts-ignore
     interface NuxtApp {
+        $supabase: SupabaseClient
+    }
+}
+
+declare module '@vue/runtime-core' {
+    interface ComponentCustomProperties {
         $supabase: SupabaseClient
     }
 }
