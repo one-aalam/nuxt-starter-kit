@@ -1,6 +1,4 @@
-import { resolve } from 'path'
-import { fileURLToPath } from 'url'
-import { defineNuxtModule, addPlugin } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
 
 export interface ModuleOptions {
   addPlugin: Boolean
@@ -23,9 +21,9 @@ export default defineNuxtModule<ModuleOptions>({
   },
   setup (options, nuxt) {
     if (options.addPlugin) {
-      const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
-      nuxt.options.build.transpile.push(runtimeDir)
-      addPlugin(resolve(runtimeDir, 'plugin'))
+        // Create resolver to resolve relative paths
+        const { resolve } = createResolver(import.meta.url)
+        addPlugin(resolve('./runtime/plugin'))
     }
   }
 })
