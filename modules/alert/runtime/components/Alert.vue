@@ -4,8 +4,8 @@
       class="alert"
       v-if="isVisible"
       :class="{
-        'alert--success': alert.type === 'success',
-        'alert--error': alert.type === 'error',
+        'alert--success bg-green-300 text-gray-800': alert.type === 'success',
+        'alert--error bg-red-500 text-white': alert.type === 'error',
       }"
     >
       <div class="alert__content">
@@ -26,8 +26,8 @@ import { defineComponent, PropType, ref } from 'vue'
 import IconCheck from '~icons/heroicons-solid/check-circle'
 import IconInfo from '~icons/heroicons-solid/information-circle'
 import IconX from '~icons/heroicons-solid/x-circle'
-import { Alert } from './alert.type'
-import { clearAlertTimeout } from './alert.store'
+import type { Alert } from '../types'
+import { clearAlertTimeout } from '../alert.store'
 
 export default defineComponent({
   props: {

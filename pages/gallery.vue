@@ -39,9 +39,9 @@
       </ComponentExample>
       <Sep/>
       <ComponentExample heading="alert/toast">
-            <Button variant="primary" @click="handleAlert({ text: 'Success message goes here...', type: 'success'})">Success</Button>
-            <Button variant="primary" @click="handleAlert({ text: 'Error message goes here...', type: 'error'})">Error</Button>
-            <Button variant="primary" @click="handleAlert({ text: 'Default message goes here...', type: 'default'})">Default</Button>
+            <Button variant="primary" @click="$alert({ text: 'Success message goes here...', type: 'success'})">Success</Button>
+            <Button variant="primary" @click="$alert({ text: 'Error message goes here...', type: 'error'})">Error</Button>
+            <Button variant="primary" @click="$alert({ text: 'Default message goes here...', type: 'default'})">Default</Button>
       </ComponentExample>
       <Sep/>
       <ComponentExample heading="dialog/modal">
@@ -71,7 +71,7 @@
     import Spinner from '~/components/Spinner.vue'
     import PageNavIndicator from '~/components/PageNavIndicator.vue'
     import Dialog from '~/components/Dialog.vue'
-    import { handleAlert } from '~/lib/alert'
+    const { $alert } = useNuxtApp()
 
     const isOpen = ref<boolean>(false)
     const handleConfirm = () => alert('confirmed')

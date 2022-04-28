@@ -16,7 +16,7 @@
 <script lang="ts" setup>
 
     type AvatarProps = {
-        loading: boolean
+        loading?: boolean
         src: string
         title: string
     }

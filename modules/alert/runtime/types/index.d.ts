@@ -1,4 +1,4 @@
-export type Alert = {
+export interface Alert {
   text: string
   type: AlertType
 }
