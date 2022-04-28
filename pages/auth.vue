@@ -12,9 +12,8 @@
 
 <script lang="ts" setup>
     import Form from '~~/components/AuthForm.vue'
-    import { handleAlert } from '~/lib/alert'
 
-    const { $supabase } = useNuxtApp()
+    const { $supabase, $alert } = useNuxtApp()
     const router = useRouter()
     const loading = ref<boolean>(false)
 
@@ -24,13 +23,13 @@
             const { user, error } = isSignIn ? await $supabase.auth.signIn(creds) : await $supabase.auth.signUp(creds)
             loading.value = false
             if(error) {
-                return handleAlert({ type: 'error', text: error.message })
+                return $alert({ type: 'error', text: error.message })
             }
             if(isSignIn) {
-                handleAlert({ type: 'success', text: 'Logging you in shortly....' })
+                $alert({ type: 'success', text: 'Logging you in shortly....' })
                 return router.push('/profile')
             } else {
-                return handleAlert({ type: 'success', text: 'Please check your inbox to activate your account!' })
+                return $alert({ type: 'success', text: 'Please check your inbox to activate your account!' })
             }
         } catch(err) {}
     }

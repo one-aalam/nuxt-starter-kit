@@ -5,7 +5,7 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { alerts } from './alert.store'
+import { alerts } from '../alert.store'
 import Alert from './Alert.vue'
 
 export default defineComponent({

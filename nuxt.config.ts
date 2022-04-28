@@ -23,6 +23,7 @@ export default defineNuxtConfig({
         defaultClass: 'w-7 h-7 inline-block',
       },
     ],
+    './modules/alert/module'
   ],
   runtimeConfig: {
     supabaseUrl: process.env.SUPABASE_URL,

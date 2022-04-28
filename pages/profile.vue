@@ -44,7 +44,6 @@
     </NuxtLayout>
 </template>
 <script lang="ts" setup>
-    import { handleAlert } from '~/lib/alert'
     // profile attrs
     type ProfileAttrs = {
         username?: string,
@@ -58,7 +57,7 @@
         avatar_url: ''
     }
 
-    const { $supabase } = useNuxtApp()
+    const { $supabase, $alert } = useNuxtApp()
     // Supabase CRUD methods for profile
     const getUserProfile = (id: string) => $supabase.from('profiles').select(GET_COL_SET).eq('id', id).single()
     const getCurrentUserProfile = () => getUserProfile($supabase.auth.user()!.id)
@@ -110,7 +109,7 @@
             avatar_url = await getAvatar(avatar_url)
             profile.avatar_url = avatar_url
         } catch (error: any) {
-            handleAlert({ type: 'error', text: error.message })
+            $alert({ type: 'error', text: error.message })
         } finally {
             avatarLoading.value = false
         }
@@ -121,7 +120,7 @@
             loading.value = true
             let { data: { username, website, avatar_url } , error } = await getCurrentUserProfile()
             if (error) {
-                handleAlert({ type: 'default', text: 'First login? You wanna update your profile details? 🙂' })
+                $alert({ type: 'default', text: 'First login? You wanna update your profile details? 🙂' })
             }
             avatar_url = await getAvatar(avatar_url)
             // update
@@ -133,11 +132,11 @@
             fields.website = website
         } catch (error: any) {
             if(error instanceof TypeError) {
-                handleAlert({ type: 'default', text: 'First login? You wanna update your profile details? 🙂' })
+                $alert({ type: 'default', text: 'First login? You wanna update your profile details? 🙂' })
             } else if(error.message === 'The resource was not found') {
-                handleAlert({ type: 'default', text: 'You know? You can click on the randomly generated avatar to update your profile picture.' })
+                $alert({ type: 'default', text: 'You know? You can click on the randomly generated avatar to update your profile picture.' })
             } else {
-                handleAlert({ type: 'error', text: error.message })
+                $alert({ type: 'error', text: error.message })
             }
         } finally {
             loading.value = false
@@ -154,7 +153,7 @@
             profile.username = updates.username
             profile.website = updates.website
         } catch (error: any) {
-            handleAlert({ type: 'error', text: error.message })
+            $alert({ type: 'error', text: error.message })
         } finally {
             isModalOpened.value = false
             isProfileUpdating.value = false

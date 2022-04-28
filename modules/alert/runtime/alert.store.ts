@@ -1,4 +1,4 @@
-import type { Alert } from './alert.type'
+import type { Alert } from './types'
 import { ALERT_FADE_IN } from './alert.constants'
 
 export const alerts = reactive<Array<Alert>>([])

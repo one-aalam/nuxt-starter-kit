@@ -8,11 +8,11 @@
             <Sep v-if="useGithubAuth" />
             <div class="field">
                 <label for="email">Email</label>
-                <input id="email" name="email" type="email" v-model="form.email" required placeholder="your email" />
+                <input id="email" name="email" type="email" v-model="form.email" placeholder="your email" />
             </div>
             <div class="field">
                 <label for="password">Password</label>
-                <input id="password" name="password" type="password" v-model="form.password" required placeholder="Your password. Leave empty for password-less login" />
+                <input id="password" name="password" type="password" v-model="form.password" placeholder="Your password. Leave empty for password-less login" />
             </div>
             <div class="field poles-apart">
                 <Button type="submit" variant="primary">{{currActionLabel}}</Button>
@@ -29,7 +29,6 @@
 <script lang="ts" setup>
     import type { UserCredentials } from '@supabase/supabase-js'
     import { ref, reactive, watch } from 'vue'
-    import { handleAlert } from '~/lib/alert'
 
     type AuthMode = 'Sign In' | 'Sign Up'
     const isSignIn = ref<boolean>(true)
@@ -38,7 +37,7 @@
         email: '',
         password: ''
     })
-    const { $supabase } = useNuxtApp()
+    const { $supabase, $alert } = useNuxtApp()
 
     const { resetOnSubmit, useGithubAuth } = withDefaults(defineProps<{
         resetOnSubmit?: boolean
@@ -57,15 +56,15 @@
     const submit = () => {
         // BYOV - Bring your own validation!
         if(!form.email || !form.password) {
-            handleAlert({ type: 'error', text: 'Please fill-in both the <strong>email</strong> and the <strong>password</strong>!'})
+            $alert({ type: 'error', text: 'Please fill-in both the <strong>email</strong> and the <strong>password</strong>!'})
             return
         }
         if(!form.email.match(/^\S+@\S+$/)) {
-            handleAlert({ type: 'error', text: 'Please fill-in a valid <strong>email</strong> address!'})
+            $alert({ type: 'error', text: 'Please fill-in a valid <strong>email</strong> address!'})
             return
         }
         if(form.password.length <= 6) {
-            handleAlert({ type: 'error', text: '<strong>Password</strong> must be at-least 6 chars!'})
+            $alert({ type: 'error', text: '<strong>Password</strong> must be at-least 6 chars!'})
             return
         }
         const { email, password } = form
